@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport"content="width=device-width, initial-scale=1,maximum-scale=5"/>
+    <link rel="icon" href="weather/Shower.png" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps.css"/>
+    <script type="text/javascript" src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.18.0/maps/maps-web.min.js"></script>
+    <title>Weather ForeCast</title>
+  </head>
+
+  <body>
+    <div class="menu">
+      <button id="search" class="search" onclick="search()">Search for places</button>
+      <button class="gps" onclick="countclick()"><img src="icon/gps.svg" alt=""></button>
+      <div id="weather" class="weather"><img src="" id="indication" class="indication"></div>
+      <div id="cloud" class="cloud"><img src="weather/Cloud-background.png" alt=""></div>
+      <div id="temp" class="temp"><span id="temp-now" class="temperature">15</span><span id="degree" class="temp degree units">°C</span></div>
+      <div id="status" class="status" id="status">Weather</div>
+      <div id="date" class="date">Today<span class="strip">-</span><span class="year" id="year">Fri, 5 Jun</span></div>
+      <div id="location" class="location"><img src="icon/location.svg" id="loc-icon" class="loc-icon"><span id="loc" class="loc">Location</span></div>
+    </div>
+
+    <div id="hidden" class="hidden">
+      <div class="searching">
+        <form action="#" onsubmit="searching(); return false" id="forms" autocomplete="off">
+          <div class="autocomplete-container" id="autocomplete-container"></div>
+          <input type="submit" class="submit-loc" value="Search">
+        </form>
+      </div>
+      <button id="X" class="X" onclick="closing()"><img src="icon/close.svg"></button>
+    </div>
+
+    <div class="page" >
+      <div class="degrees">
+        <button class="F deg" onclick="Fahrenheit()">°F</button>
+        <button class="C deg" onclick="Celcius()" disabled>°C</button>
+      </div>
+
+      <div class="content">
+        <div class="day-box">
+          <div class="boxes">
+            <div id="tomorrow1" class="box-title">Tomorrow</div>
+            <div><img id="weather-tomorrow1" src="weather/Thunderstorm.png" id="weather-box" class="weather-box"></div>
+            <div id="temp-tomorrow1" class="temp-next"><span id="temp-max1" class="temperature">16</span><span class="units">°C</span><span id="temp-min1" class="temp-min temperature">11</span><span class="units">°C</span></div>
+          </div>
+          <div class="boxes sec">
+            <div id="tomorrow2" class="box-title">Sun, 7 Jun</div>
+            <div><img id="weather-tomorrow2" src="weather/Clear.png" class="weather-box"></div>
+            <div id="temp-tomorrow2" class="temp-next"><span id="temp-max2" class="temperature">16</span><span class="units">°C</span><span id="temp-min2" class="temp-min temperature">11</span><span class="units">°C</span></div>
+          </div>
+          <div class="boxes sec">
+            <div id="tomorrow3" class="box-title">Mon, 8 Jun</div>
+            <div><img id="weather-tomorrow3" src="weather/HeavyRain.png" class="weather-box"></div>
+            <div id="temp-tomorrow3" class="temp-next"><span id="temp-max3" class="temperature">16</span><span class="units">°C</span><span id="temp-min3" class="temp-min temperature">11</span><span class="units">°C</span></div>
+          </div>
+          <div class="boxes sec">
+            <div id="tomorrow4" class="box-title">Tue, 9 Jun</div>
+            <div><img id="weather-tomorrow4" src="weather/HeavyCloud.png" class="weather-box"></div>
+            <div id="temp-tomorrow4" class="temp-next"><span id="temp-max4" class="temperature">16</span><span class="units">°C</span><span id="temp-min4" class="temp-min temperature">11</span><span class="units">°C</span></div>
+          </div>
+          <div class="boxes sec">
+            <div id="tomorrow5" class="box-title">Wed, 10 Jun</div>
+            <div><img id="weather-tomorrow5" src="weather/LightCloud.png" class="weather-box"></div>
+            <div id="temp-tomorrow5" class="temp-next"><span id="temp-max5" class="temperature">16</span><span class="units">°C</span><span id="temp-min5" class="temp-min temperature">11</span><span class="units">°C</span></div>
+          </div>
+        </div>
+
+        <div class="highlight">
+          <div class="title-highlight">Today's Highlight</div>
+          <div class="high-box">
+            <div class="high-content">
+              <div class="highlight-label">Wind Status</div>
+              <div class="highlight-val"><span id="speed">7</span><span class="unit">mph</span></div>
+              <div class="wind-direction"><img src="icon/navigation.svg" id="direction" class="direction"><span id="dir" class="dir">South West</span></div>
+            </div>
+            <div class="high-content dup">
+              <div class="highlight-label">Humidity</div>
+              <div class="highlight-val"><span id="humidity-val">84</span><span class="unit">%</span></div>
+              <div class="humidity-label">
+                <div>0</div>
+                <div class="humidity-label next">50</div>
+                <div class="humidity-label next">100</div>
+              </div>
+              <div><input type="range" class="humidity" id="humidity-range" min="0" max="100" value="80"></div>
+              <div class="percentage">%</div>
+            </div>
+          </div>
+          <div class="high-box2">
+            <div class="high-content">
+              <div class="highlight-label">Visibility</div>
+              <div class="highlight-val"><span id="visibility">6,4</span><span class="unitt">miles</span></div>
+            </div>
+            <div class="high-content dup">
+              <div class="highlight-label">Air Pressure</div>
+              <div class="highlight-val"><span id="pressure">998</span><span class="unitt">mb</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="lat_temp" style="display: none;">0</div>
+        <div id="lon_temp" style="display: none;">0</div>
+        <div id="lat" style="display: none;"></div>
+        <div id="lon" style="display: none;"></div>
+        <div id="place" style="display: none;"></div>
+
+      </div>
+      <div class="watermark">
+        created by 
+        <a href="https://github.com/EekSapi" class="ref">EekSapi</a> 
+        - <a href="https://devchallenges.io/" class="ref">devChallenges.io</a>
+      </div>
+
+    </div>
+
+    <div id="map" class="map"></div>
+  </body>
+
+
+  <script src="script.js"></script>
+</html>
