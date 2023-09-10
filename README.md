@@ -33,7 +33,7 @@
 
 ## Overview
 
-![screenshot](https://github.com/EekSapi/Country-Quiz/blob/082f117b1f1f0287af78df37d9cdc27618bf5352/ss.png)
+![screenshot](https://github.com/FarelW/Weather-Forecast/blob/main/ss.png)
 
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
