@@ -14,7 +14,7 @@
       Solution
     </a>
     <span> | </span>
-    <a href="https://devchallenges.io/challenges/Bu3G2irnaXmfwQ8sZkw8">
+    <a href="https://devchallenges.io/challenges/mM1UIenRhK808W8qmLWv">
       Challenge
     </a>
   </h3>
@@ -37,8 +37,8 @@
 
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
-- Checkout my demo project on <a href="https://cool-syrniki-c6e18e.netlify.app/">this link</a>
-- This is my fourth project in term of making a responsive website
+- Checkout my demo project on <a href="https://gilded-douhua-df27e7.netlify.app/">this link</a>
+- This is my fifth project in term of making a responsive website
 - This improved my skill to be more concerned about user interface
 
 ### Built With
@@ -51,15 +51,19 @@ Introduce your projects by taking a screenshot or a gif. Try to tell visitors a 
 
 ## Features
 
-<!-- List the features of your application or follow the template. Don't share the figma file here :) -->
-
 This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/Bu3G2irnaXmfwQ8sZkw8) was to build an application to complete the given user stories:
-- [x] User story: I can see at least 2 types of questions: a city is the capital of.. or a flag belong to country..
-- [x] User story: I can see select an answer
-- [x] User story: I can see if my answer is correct or incorrect
-- [x] User story: When I answer correctly, I can move on to the next question
-- [x] User story: When I answer incorrectly, I can see my results and try again
-- [x] User story: I can try again
+- [x] User story: I can see city weather as default, preferably my current location
+- [x] User story: I can search for city
+- [x] User story: I can see weather of today and the next 5 days
+- [x] User story: I can see the date and location of the weather
+- [x] User story: I can see according to image for each type of weather
+- [x] User story: I can see the min and max degree each day
+- [x] User story: I can see wind status and wind direction
+- [x] User story: I can see humidity percentage
+- [x] User story: I can see a visibility indicator
+- [x] User story: I can see the air pressure number
+- [x] User story(optional): I can request my current location weather
+- [x] User story(optional): I can convert temperature in Celcius to Fahrenheit and vice versa
 
 ## Contact
 
